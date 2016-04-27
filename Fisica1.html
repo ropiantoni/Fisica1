@@ -5,20 +5,84 @@
     <meta charset="UTF-8">
     <title>Fisica 1-Problemas de Encuentro</title>
 </head>
-<body background="Imagenes/FondoRosa.png">
-<h1 align="center">FISICA I <img src="Imagenes/Imagen1.png" style="width: 10%"align="right"></h1>
+<body background="Imagenes/2560x1600-light-gray-solid-color-background%20(1).jpg"></body>
+<h1 align="center">FISICA I <img src="Imagenes/Imagen1.png" style="width: 10%" align="right"></h1>
 <h1>PROBLEMAS DE ENCUENTRO</h1>
 
-<div align="center">
-   Ingese datos
-    <input type="text" name="nombre">
-    <input type="password" name="psw">
-    <input type="email" name="email">
+<div align="left">
+    <form>
+        <fieldset>
+            <legend>QUE DATOS TENES?</legend>
+            <label></label>
+                <input type="radio" name="Velocidad" value="Velocidad"> Velocidad
+            </label>
+            <label>
+                <input type="radio" name="Tiempo" value="Tiempo"> Tiempo
+            </label>
+            <label>
+                <input type="radio" name="Aceleracion" value="Aceleracion"> Aceleracion
+            </label>
+            <label>
+                <input type="radio" name="Distancia" value="Distancia"> Distancia
+            </label>
+        </fieldset>
+    </form>
 
 </div>
 
 <footer></footer>
+<div align="left">
+    <form>
+        <fieldset>
+            <legend>VELOCIDAD</legend>
+            <FORM ACTION="mailto:unaprueba" METHOD="POST">
+                Velocidades:<BR><INPUT TYPE="radio" NAME="boton1" VALUE="1"> Velocidad 1
+                <BR>Ingrese Velocidad 1: <INPUT TYPE="text" NAME="nombre"><BR>
+                <INPUT TYPE="radio" NAME="boton1" VALUE="2">Velocidad 2<BR>
+                Ingrese Velocidad 2: <INPUT TYPE="text" NAME="nombre"><BR>
+        </fieldset>
+    </form>
+    </div>
 
+<div align="left">
+        <form>
+            <fieldset>
+                <legend>ACELERACION</legend>
+                <FORM ACTION="mailto:unaprueba" METHOD="POST">
+                    Aceleraciones:<BR><INPUT TYPE="radio" NAME="boton1" VALUE="1"> Aceleracion 1
+                    <BR>Ingrese Aceleracion 1: <INPUT TYPE="text" NAME="nombre"><BR>
+                    <INPUT TYPE="radio" NAME="boton1" VALUE="2">Aceleracion 2<BR>
+                    Ingrese Aceleracion 2: <INPUT TYPE="text" NAME="nombre"><BR>
+                    </FORM>
+            </fieldset>
+        </form>
+    </div>
 
+<div aling="left">
+        <form>
+            <fieldset>
+                <legend>QUE DESEA CALCULAR?</legend>
+                <select>
+                    <option value="seleccione">Seleccione una opcion</option>
+                    <option value="DISTANCIA">Distancia que se producira el encuentro</option>
+                    <option value="TIEMPO">Tiempo que se producira el encuentro</option>
+                </select>
+                <button type="button">GO!</button>
+                </fieldset>
+            </form>
+</div>
+
+<div aling="left">
+    <form>
+        <fieldset>
+            <legend>RESULTADO</legend>
+            <br> ->RESULTADO<-
+        </fieldset>
+    </form>
+    </div>
+<video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+</video>
 </body>
 </html>
