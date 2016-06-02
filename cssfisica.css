@@ -1,0 +1,53 @@
+#fondorec{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width:1300px;
+    height:170px ;
+
+}
+#tit{
+    position: absolute;
+    top: 0;
+    right: 450px;
+    margin: 5px;
+    width: 400px;
+    font-size:100px;
+    color: #ffffff;
+    font-family: Impact ;
+}
+#tipito{
+    position:absolute;
+    top: 0;
+    right:0;
+
+    width: 10%;
+    align:right;
+
+}
+#fondosub{
+    position:absolute;
+    left: 0;
+    width:100%;
+    height:10% ;
+}
+#subtitulo{
+    position: absolute;
+    left: 0;
+    margin: 10px;
+    width: 800px;
+    font-size:40px;
+    font-family: Impact;
+
+}
+#rosa{
+    align:"left";
+    width: 400px;
+    background-image:url(Imagenes/images.png);
+    font-family: Impact;
+}
+#fondito{
+    color: #ffffff;
+    background-image: url(Imagenes/fondorecortado.jpg);
+
+}
