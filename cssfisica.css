@@ -40,14 +40,95 @@
     font-family: Impact;
 
 }
-#rosa{
+#rosa1{
     align:"left";
     width: 400px;
     background-image:url(Imagenes/images.png);
     font-family: Impact;
 }
-#fondito{
+#fondito1{
     color: #ffffff;
     background-image: url(Imagenes/fondorecortado.jpg);
-
+}
+#flecha1{
+    width: 30px;
+    position:absolute;
+    top: 60px;
+    left: 200px;
+    margin: 210px;
+}
+#rosa2{
+    position:absolute;
+    top: 0;
+    left: 220px;
+    margin: 220px;
+    background-image:url(Imagenes/images.png);
+    font-family: Impact;
+}
+#ancho1{
+    align:left;
+    width: 400px;
+}
+#fondito2{
+    color: #ffffff;
+    background-image: url(Imagenes/fondorecortado.jpg);
+}
+#flecha2{
+    width: 30px;
+    position:absolute;
+    top: 60px;
+    left: 630px;
+    margin: 210px;
+}
+#rosa3{
+    position:absolute;
+    top: 0;
+    left: 650px;
+    margin: 220px;
+    background-image:url(Imagenes/images.png);
+    font-family: Impact;
+}
+#ancho2{
+    align:"left";
+    width: 400px;
+}
+#fondito3{
+    color: #ffffff;
+    background-image: url(Imagenes/fondorecortado.jpg);
+}
+#rosa4{
+    aling:"left";
+    width: 400px;
+    font-size: 20px;
+    background-image:url(Imagenes/images.png);
+    font-family: Impact;
+}
+#fondito4{
+    color: #ffffff;
+    background-image:url(Imagenes/fondorecortado.jpg);
+}
+#rosa5{
+    aling:"left";
+    width: 400px;
+    background-image:url(Imagenes/images.png);
+    font-family: Impact;
+}
+#fondito5{
+    font-size: 20px;
+    color:#ffffff;
+    background-image:url(Imagenes/fondorecortado.jpg);
+    font-family: Impact;
+}
+#fondovideo{
+    position:absolute;
+    top: 0;
+    left: 50px;
+    margin: 400px;
+    background-image:url(Imagenes/1632187.png);
+    width: 650px;
+    font-family: Impact;
+}
+#videito{
+    width:650px;
+    height:240px;
 }
