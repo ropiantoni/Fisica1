@@ -3,13 +3,14 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="cssfisica.css">
+    <script type="text/javascript"src="javafisica.js"></script>
     <meta charset="UTF-8">
     <title>Fisica 1-Problemas de Encuentro</title>
 </head>
 
 
-<body background="Imagenes/2560x1600-light-gray-solid-color-background%20(1).jpg"; ></body>
-
+<body background="Imagenes/2560x1600-light-gray-solid-color-background%20(1).jpg"; >
+<form id="Calculos">
 <h1>
 <div>
     <img id="fondorec" src= "Imagenes/fondorecortado.jpg" >
@@ -26,7 +27,7 @@
 
 <div id="espacio"></div>
 <div id="rosa1">
-    <form>
+
         <fieldset>
             <legend> <div id="fondito1">QUE DATOS TENES?</div></legend>
             <label></label><BR>
@@ -35,14 +36,13 @@
             <label><BR>
                 <input type="radio" name="Tiempo" value="Tiempo"> Tiempo
             </label>
-            <label><BR>
-                <input type="radio" name="Aceleracion" value="Aceleracion"> Aceleracion
-            </label>
+
+
             <label><BR>
                 <input type="radio" name="Distancia" value="Distancia"> Distancia
             </label>
         </fieldset>
-    </form>
+
 
 </div>
 <div>
@@ -51,17 +51,15 @@
 <footer></footer>
 <div id="rosa2">
 <div id="ancho1">
-    <form>
+
         <fieldset>
             <legend><div id="fondito2">VELOCIDAD</div></legend>
-            <FORM ACTION="mailto:unaprueba" METHOD="POST">
                 Velocidades:<BR><INPUT TYPE="radio" NAME="boton1" VALUE="1"> Velocidad 1
                 <BR>Ingrese Velocidad 1: <INPUT TYPE="text" NAME="nombre"><BR>
                 <INPUT TYPE="radio" NAME="boton1" VALUE="2">Velocidad 2<BR>
                 Ingrese Velocidad 2: <INPUT TYPE="text" NAME="nombre"><BR>
-                </FORM>
         </fieldset>
-    </form>
+
     </div>
     </div>
 <div>
@@ -69,17 +67,15 @@
 </div>
 <div id="rosa3">
 <div id="ancho2">
-        <form>
+
             <fieldset>
                 <legend><div id="fondito3">ACELERACION</div></legend>
-                <FORM ACTION="mailto:unaprueba" METHOD="POST">
                     Aceleraciones:<BR><INPUT TYPE="radio" NAME="boton1" VALUE="1"> Aceleracion 1
                     <BR>Ingrese Aceleracion 1: <INPUT TYPE="text" NAME="nombre"><BR>
                     <INPUT TYPE="radio" NAME="boton1" VALUE="2">Aceleracion 2<BR>
                     Ingrese Aceleracion 2: <INPUT TYPE="text" NAME="nombre"><BR>
-                    </FORM>
             </fieldset>
-        </form>
+
     </div>
     </div>
 <BR>
@@ -87,7 +83,7 @@
 <BR>
 <BR>
 <div id="rosa4">
-        <form>
+
             <fieldset>
                 <legend><div id="fondito4">QUE DESEA CALCULAR?</div></legend>
                 <select>
@@ -98,7 +94,7 @@
                 <button type="button">CALCULAR!</button>
 
                 </fieldset>
-            </form>
+
 </div>
 
 <BR>
@@ -106,12 +102,12 @@
 <BR>
 <BR>
 <div id="rosa5">
-    <form>
+
         <fieldset>
             <legend><div id="fondito5">RESULTADO</div></legend>
             <br>  <p>Aqui se mostrara el Resultado</p>
         </fieldset>
-    </form>
+
     </div>
 
 <div id="fondovideo">
@@ -120,5 +116,6 @@
     <source src="movie.ogg" type="video/ogg">
 </video>
     </div>
+</form>
 </body>
 </html>
