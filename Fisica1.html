@@ -9,100 +9,101 @@
 </head>
 
 
-<body>
+<body onload="dibujar()">
 <form id="valores">
-<div id="tit">
-    FISICA I
-    <img id="tipito" src="Imagenes/einstein.png">
-</div>
+    <div id="tit">
+        FISICA I
+        <img id="tipito" src="Imagenes/Imagen1.png"/>
+    </div>
 
-<div id="subtitulo">PROBLEMAS DE ENCUENTRO</div>
+    <div id="subtitulo">PROBLEMAS DE ENCUENTRO</div>
 
-<div id="espacio">
+    <div id="espacio">
 
-    <form id="calculos">
+        <form id="calculos">
+            <fieldset id="rosa1" class="rosa">
+                <legend>
+                    <div class="fondito">QUE DATOS TENES?</div>
+                </legend>
+                <BR>
+                <input type="checkbox" name="Velocidad" id="Velocidad"> Velocidad
+                <label><BR>
+                    <input type="checkbox" name="Tiempo" id="Tiempo"> Tiempo
+                </label>
+                <label><BR>
+                    <input type="checkbox" name="Aceleracion" id="Aceleracion"> Aceleracion
+                </label>
+                <label><BR>
+                    <input type="checkbox" name="Distancia" id="Distancia"> Distancia
+                </label>
+            </fieldset>
 
-        <fieldset id="rosa1" class="rosa">
-            <legend>
-                <div class="fondito">QUE DATOS TENES?</div>
-            </legend>
-            <BR>
-            <input type="checkbox" name="Velocidad"> Velocidad
-            </label>
-            <label><BR>
-                <input type="checkbox" name="Tiempo"> Tiempo
-            </label>
-            <label><BR>
-                <input type="checkbox" name="Aceleracion"> Aceleracion
-            </label>
-            <label><BR>
-                <input type="checkbox" name="Distancia"> Distancia
-            </label>
-        </fieldset>
+            <div>
+                <img id="flecha1" src="Imagenes/37758.svg">
+            </div>
 
-        <div>
-            <img id="flecha1" src="Imagenes/37758.svg">
-        </div>
+            <fieldset id="rosa2" class="rosa">
+                <legend>
+                    <div class="fondito">VELOCIDAD</div>
+                </legend>
+                Velocidades:<BR>
+                <INPUT TYPE="checkbox" NAME="boton1"> Velocidad 1
+                <BR>Ingrese Velocidad 1:
+                <INPUT TYPE="text" id="vel1" NAME="vel1" onchange="comprobarNum(this.value, this.name)">
+                <BR>
+                <INPUT TYPE="checkbox" NAME="boton1">Velocidad 2<BR>
+                Ingrese Velocidad 2:
+                <INPUT TYPE="text" id="vel2" NAME="vel2" onchange="comprobarNum(this.value, this.name)"><BR>
+            </fieldset>
 
-        <fieldset id="rosa2" class="rosa">
-            <legend>
-                <div class="fondito">VELOCIDAD</div>
-            </legend>
-            Velocidades:<BR>
-            <INPUT TYPE="checkbox" NAME="boton1"> Velocidad 1
-            <BR>Ingrese Velocidad 1:
-            <INPUT TYPE="text" NAME="vel1" onchange="comprobarNum(this.value, this.name)"><BR>
-            <INPUT TYPE="checkbox" NAME="boton1">Velocidad 2<BR>
-            Ingrese Velocidad 2:
-            <INPUT TYPE="text" NAME="vel2" onchange="comprobarNum(this.value, this.name)"><BR>
-        </fieldset>
+            <div>
+                <img id="flecha2" src="Imagenes/37758.svg">
+            </div>
 
-        <div>
-            <img id="flecha2" src="Imagenes/37758.svg">
-        </div>
+            <fieldset id="rosa3" class="rosa">
+                <legend>
+                    <div class="fondito">ACELERACION</div>
+                </legend>
+                Aceleraciones:<BR>
+                <INPUT TYPE="checkbox" NAME="boton1" VALUE="1"> Aceleracion 1
+                <BR>Ingrese Aceleracion 1:
+                <INPUT TYPE="text" id="acel1" NAME="acel1" onchange="comprobarNum(this.value, this.name)"><BR>
+                <INPUT TYPE="checkbox" NAME="boton1" VALUE="2">Aceleracion 2<BR>
+                Ingrese Aceleracion 2:
+                <INPUT TYPE="text" id="acel2" NAME="acel2" onchange="comprobarNum(this.value, this.name)"><BR>
+            </fieldset>
 
-        <fieldset id="rosa3" class="rosa">
-            <legend>
-                <div class="fondito">ACELERACION</div>
-            </legend>
-            Aceleraciones:<BR>
-            <INPUT TYPE="checkbox" NAME="boton1" VALUE="1"> Aceleracion 1
-            <BR>Ingrese Aceleracion 1:
-            <INPUT TYPE="text" NAME="acel1" onchange="comprobarNum(this.value, this.name)"><BR>
-            <INPUT TYPE="checkbox" NAME="boton1" VALUE="2">Aceleracion 2<BR>
-            Ingrese Aceleracion 2:
-            <INPUT TYPE="text" NAME="acel2" onchange="comprobarNum(this.value, this.name)"><BR>
-        </fieldset>
+            <fieldset id="rosa4" class="rosa">
+                <legend>
+                    <div class="fondito">QUE DESEA CALCULAR?</div>
+                </legend>
+                <select name="opcion" id="opcion">
+                    <option value="seleccione">Seleccione una opcion</option>
+                    <option value="DISTANCIA">Distancia que se producira el encuentro</option>
+                    <option value="TIEMPO">Tiempo que se producira el encuentro</option>
+                </select>
+                <a onclick="calculo();dibujar()"><button type="button">CALCULAR! </button></a>
+            </fieldset>
 
-        <fieldset id="rosa4" class="rosa">
-            <legend>
-                <div class="fondito">QUE DESEA CALCULAR?</div>
-            </legend>
-            <select name="opcion">
-                <option value="seleccione">Seleccione una opcion</option>
-                <option value="DISTANCIA">Distancia que se producira el encuentro</option>
-                <option value="TIEMPO">Tiempo que se producira el encuentro</option>
-            </select>
-            <a onclick="calculo()"><button type="button">CALCULAR! </button></a>
-        </fieldset>
+            <fieldset id="rosa5" class="rosa">
+                <legend>
+                    <div class="fondito">RESULTADO</div>
+                </legend>
+                <br>
+                <input type="text" id="resultado" name="resultado" disabled>
+            </fieldset>
 
-        <fieldset id="rosa5" class="rosa">
-            <legend>
-                <div class="fondito">RESULTADO</div>
-            </legend>
-            <br>
-            <input type="text" id="resultado" disabled>
-        </fieldset>
+            <canvas id="fondovideo" width="656" height="228">
 
-
-        <div id="fondovideo">
-            <video id="videito" controls>
-                <source src="movie.mp4" type="video/mp4">
-                <source src="movie.ogg" type="video/ogg">
-            </video>
-        </div>
-    </form>
-</div>
+            </canvas>
+            <!--div id="fondovideo">
+                <video id="videito" controls>
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                </video>
+            </div-->
+        </form>
+    </div>
 </form>
 </body>
 </html>

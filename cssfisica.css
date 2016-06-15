@@ -1,3 +1,8 @@
+div
+{
+    border-radius: 5px;
+}
+
 #tit{
     position: absolute;
     width: 100%;
@@ -38,6 +43,7 @@ body{
     position: absolute;
     margin-top: 228px;
     top: 0px;
+    border-radius: 5px;
 }
 
 .fondito{
@@ -51,6 +57,7 @@ body{
     top: 60px;
     left: 200px;
     margin: 210px;
+    border-radius: 5px;
 }
 #rosa2{
     left: 220px;
@@ -85,6 +92,7 @@ body{
     margin: 400px;
     background-image:url("Imagenes/1632187.png");
     width: 650px;
+    border-radius: 5px;
 }
 #videito{
     width:650px;

@@ -4,9 +4,14 @@
  * @author Piantoni & Bertorello
  * @version 0.1
  */
+/**
+ * @fileoverview Libreria Js Para problemas de encuentro
+ * @author Piantoni & Bertorello
+ * @version 0.1
+ */
 
 /**
- * Comprueba que los valores ingresados sean Numéricos, sino, envia mensaje al usuario yblanquea el campo de texto
+ * Comprueba que los valores ingresados sean Numéricos, sino, envia mensaje al usuario y blanquea el campo de texto
  * @method comprobarNum
  * @param valorIngreso, valor ingresado que puede ser altura, masa, distancia o Indice de Rozamiento
  * @param nombreParametro, que puede ser altura, masa, distanciaFreno o CoeficienteRozamiento
@@ -14,34 +19,51 @@
 function comprobarNum(valorIngreso, nombreParametro) {
     if (isNaN(valorIngreso)) {
         alert("Valor ingresado no numerico, ingresar de nuevo.");
-
-        var el = document.getElementById("calculos").elements;
-        el[nombreParametro].value = "";
+        document.getElementById(nombreParametro).value = "";
     }
-}   
-
-function cargaValores (){
-   var el= document.getElementById("valores").elements;
-    var url=el["opcion"].value+ "#"+ el["vel1"].value + "#" + el["vel2"].value + "#" + el["acel1"].value + "#" + el["acel2"].value ;
-    window.location.replace(url);
 }
 
+
+/**
+ * Calcula la distancia a la que se produce el encuentro o el tiempo que demora, según la opción que ingresa el usuario
+ */
 function calculo (){
-    var el= document.getElementById("valores").elements;
-    var url=el["opcion"].value+ "#"+ el["vel1"].value + "#" + el["vel2"].value + "#" + el["acel1"].value + "#" + el["acel2"].value ;
-
-
-    var arreglo = url.hash.split("#"); //QUIERO HACER UN ARREGLO SEPARANDO LOS HASH DE LA VARIABLE URL!!! COMO HAGO???
-    var op = arreglo[0];
-    var velocidad1 = arreglo[1];
-    var velocidad2 = arreglo[2];
-    var aceleracion1 =arreglo[3];
-    var aceleracion2 = arreglo[4];
-
-    alert(op);
+    var velocidad1 = document.getElementById("vel1").value;
+    var velocidad2 = document.getElementById("vel2").value;
+    var aceleracion1 = document.getElementById("acel1").value;
+    var aceleracion2 = document.getElementById("acel2").value;
+    var op = document.getElementById("opcion").value;
 
     if(op == "DISTANCIA") {
-        resultado = 9; //poner Formula!!
+        resultado = Number(velocidad1)+Number(velocidad2); //poner Formula!!
         document.getElementById("resultado").value = resultado;
     }
+}
+
+function dibujar() {
+    var myCanvas = document.getElementById("fondovideo");
+    var ctx = myCanvas.getContext("2d");
+    var centerY = myCanvas.height / 2;
+    var auto1 = new Image();
+    auto1.src = "Imagenes/auto.jpg";
+    var vector1 = 60;
+
+    ctx.beginPath();
+    ctx.drawImage(auto1,0,centerY-(auto1.height/2));
+    ctx.moveTo(auto1.width,centerY);
+    ctx.lineTo(auto1.width+vector1,centerY);
+
+    //Parte flecha arriba
+    ctx.moveTo(auto1.width+vector1,centerY);
+    ctx.lineTo(auto1.width+vector1-10,centerY-10);
+
+    //Parte flecha abajo
+    ctx.moveTo(auto1.width+vector1,centerY);
+    ctx.lineTo(auto1.width+vector1-10,centerY+10);
+
+    //Escribir texto
+    ctx.font = "15px Arial";
+    ctx.fillText(vector1,auto1.width+vector1/2-10,centerY-3);
+
+    ctx.stroke();
 }
