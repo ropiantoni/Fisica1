@@ -1,3 +1,8 @@
+*
+{
+    font-family: 'Comfortaa', cursive !important;
+}
+
 div
 {
     border-radius: 5px;
@@ -8,7 +13,6 @@ div
     width: 100%;
     font-size:100px;
     color: #ffffff;
-    font-family: Impact;
     background-image: url("Imagenes/fondorecortado.jpg");
     text-align: center;
     top: 0px;
@@ -31,15 +35,13 @@ body{
     width: 100%;
     height: 80px;
     font-size:60px;
-    font-family: Impact;
     background-color: #31b5ff;
 }
 
 .rosa{
     align:"left";
-    width: 400px;
+    width: 40%;
     background-color: #f6a9c9;
-    font-family: Impact;
     position: absolute;
     margin-top: 228px;
     top: 0px;
@@ -51,46 +53,49 @@ body{
     background-image: url("Imagenes/fondorecortado.jpg");
 }
 
-#flecha1{
-    width: 30px;
-    position:absolute;
-    top: 60px;
-    left: 200px;
-    margin: 210px;
-    border-radius: 5px;
-}
-#rosa2{
+
+
+/*
+#rosa2
+{
     left: 220px;
     margin: 228px;
 }
-
-#flecha2{
-    width: 30px;
-    position:absolute;
-    top: 60px;
-    left: 630px;
-    margin: 210px;
+*/
+#rosa1
+{
+    position: absolute;
+    left:650px;
+    text-align: center;
 }
-#rosa3{
-    left: 650px;
-    margin: 228px;
+#rosa2
+{
+    text-align: center !important;
 }
 
 #rosa4{
     font-size: 20px;
     margin-top: 394px;
+    float: left;
+    height: 141px;
+    text-align: center;
 }
 
 #rosa5{
-    margin-top: 495px;
+    position: absolute;
+    top:170px;
+    left: 650px;
+    float: left;
+    height: 141px;
+    text-align: center;
 }
 
 #fondovideo{
-    position:absolute;
     top: 0;
     left: 50px;
-    margin: 400px;
-    background-image:url("Imagenes/1632187.png");
+    margin-top: 300px;
+    margin-left: 300px;
+    background: #ffffff;
     width: 650px;
     border-radius: 5px;
 }
@@ -101,4 +106,26 @@ body{
 #espacio{
     margin: 140px 0px 0px 0px;
     padding-top: 160px;
+}
+#pos-uno
+{
+    margin-left: 20px;
+    margin-top: 15px;
+}
+#opcion
+{
+    margin-top: 30px;
+    position: relative;
+    left:40px;
+}
+.calcular
+{
+    position: relative;
+    left: -130px;
+    top:30px;
+}
+#pos-dos
+{
+    margin-left: 20px;
+    margin-top: 15px;
 }

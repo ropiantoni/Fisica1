@@ -28,42 +28,67 @@ function comprobarNum(valorIngreso, nombreParametro) {
  * Calcula la distancia a la que se produce el encuentro o el tiempo que demora, según la opción que ingresa el usuario
  */
 function calculo (){
-    var velocidad1 = document.getElementById("vel1").value;
-    var velocidad2 = document.getElementById("vel2").value;
-    var aceleracion1 = document.getElementById("acel1").value;
-    var aceleracion2 = document.getElementById("acel2").value;
+    var velocidad1 = document.getElementById("vel-uno").value;
+    var velocidad2 = document.getElementById("vel-dos").value;
+    var posicion1 = document.getElementById("pos-uno").value;
+    var posicion2 = document.getElementById("pos-dos").value;
     var op = document.getElementById("opcion").value;
-
+    var tiempo;
+    var distancia;
+    tiempo = (document.getElementById("pos-uno").value - document.getElementById("pos-dos").value) / (document.getElementById("vel-dos").value - document.getElementById("vel-uno").value);
+    tiempo = tiempo * 3600;
     if(op == "DISTANCIA") {
-        resultado = Number(velocidad1)+Number(velocidad2); //poner Formula!!
-        document.getElementById("resultado").value = resultado;
+        distancia = document.getElementById("pos-uno").value + document.getElementById("vel-uno").value * Number(tiempo);
+        document.getElementById("resultado").value = distancia + "m";
+    }
+
+    if(op == "TIEMPO")
+    {
+
+        document.getElementById("resultado").value = tiempo + "s";
+
     }
 }
 
 function dibujar() {
+
     var myCanvas = document.getElementById("fondovideo");
     var ctx = myCanvas.getContext("2d");
     var centerY = myCanvas.height / 2;
-    var auto1 = new Image();
+    var auto1 = new Image(100,20);
     auto1.src = "Imagenes/auto.jpg";
     var vector1 = 60;
 
-    ctx.beginPath();
-    ctx.drawImage(auto1,0,centerY-(auto1.height/2));
-    ctx.moveTo(auto1.width,centerY);
-    ctx.lineTo(auto1.width+vector1,centerY);
+    auto1.onload = function () {
+        ctx.beginPath();
+        ctx.drawImage(auto1,0,centerY-(auto1.height/2));
+        ctx.moveTo(auto1.width,centerY);
+        ctx.lineTo(auto1.width+vector1,centerY);
 
-    //Parte flecha arriba
-    ctx.moveTo(auto1.width+vector1,centerY);
-    ctx.lineTo(auto1.width+vector1-10,centerY-10);
+        ctx.moveTo(0,centerY+30);
+        ctx.lineTo(700,centerY+30);
 
-    //Parte flecha abajo
-    ctx.moveTo(auto1.width+vector1,centerY);
-    ctx.lineTo(auto1.width+vector1-10,centerY+10);
+        //Parte flecha arriba
+        ctx.moveTo(auto1.width+vector1,centerY);
+        ctx.lineTo(auto1.width+vector1-10,centerY-10);
 
-    //Escribir texto
-    ctx.font = "15px Arial";
-    ctx.fillText(vector1,auto1.width+vector1/2-10,centerY-3);
+        //Parte flecha abajo
+        ctx.moveTo(auto1.width+vector1,centerY);
+        ctx.lineTo(auto1.width+vector1-10,centerY+10);
 
-    ctx.stroke();
+
+        ctx.stroke();}
+
+    var auto2 = new Image(200,20);
+    auto2.src = "Imagenes/auto.jpg";
+    var vector2 = 60;
+
+    auto2.onload = function () {
+        ctx.beginPath();
+        ctx.drawImage(auto2+100,0,centerY-(auto2.height/2));
+
+
+        ctx.stroke();}
+
+
 }
