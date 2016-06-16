@@ -56,39 +56,37 @@ function dibujar() {
     var ctx = myCanvas.getContext("2d");
     var centerY = myCanvas.height / 2;
     var auto1 = new Image(100,20);
+    var auto2 = new Image(200,25);
     auto1.src = "Imagenes/auto.jpg";
+    auto2.src = "Imagenes/auto2.jpg";
     var vector1 = 60;
 
     auto1.onload = function () {
         ctx.beginPath();
         ctx.drawImage(auto1,0,centerY-(auto1.height/2));
         ctx.moveTo(auto1.width,centerY);
-        ctx.lineTo(auto1.width+vector1,centerY);
+        ctx.lineTo(auto1.width+vector1+100,centerY);
 
         ctx.moveTo(0,centerY+30);
         ctx.lineTo(700,centerY+30);
 
         //Parte flecha arriba
-        ctx.moveTo(auto1.width+vector1,centerY);
-        ctx.lineTo(auto1.width+vector1-10,centerY-10);
+        ctx.moveTo(auto1.width+vector1+100,centerY);
+        ctx.lineTo(auto1.width+vector1+90,centerY-10);
 
         //Parte flecha abajo
-        ctx.moveTo(auto1.width+vector1,centerY);
-        ctx.lineTo(auto1.width+vector1-10,centerY+10);
+        ctx.moveTo(auto1.width+vector1+100,centerY);
+        ctx.lineTo(auto1.width+vector1+90,centerY+10);
 
 
         ctx.stroke();}
-
-    var auto2 = new Image(200,20);
-    auto2.src = "Imagenes/auto.jpg";
-    var vector2 = 60;
-
     auto2.onload = function () {
         ctx.beginPath();
-        ctx.drawImage(auto2+100,0,centerY-(auto2.height/2));
-
+        ctx.drawImage(auto2,300,centerY-(auto2.height/2));
 
         ctx.stroke();}
+
+
 
 
 }
