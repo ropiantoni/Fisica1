@@ -92,28 +92,32 @@ function dibujar() {
 }
 
 
+function convertirUnidadesPosicion (){
+    var unidad=getElementById("posicion");
+    var valor;
+    if(unidad == "m"){
+        valor = valor/100000;
 
-
-function convertirUnidades (valor, unidad){ //CONVIERTE LAS UNIDADES DE VALORES AL CONVENCIONAL
-    if(unidad == "miligramo" || unidad == "milimetro"){
-        valor = valor/1000;
-
-    }else if(unidad == "centimetro"){
-        valor = valor/100;
-    }else if(unidad == "kilogramo" || unidad =="kilometro") {
-        valor = valor * 1000;
+    }else if(unidad == "cm"){
+        valor = valor/100000;
     }
     return valor;
 }
 
-function convertirUnidades (valor, unidad){ //CONVIERTE LAS UNIDADES DE VALORES AL CONVENCIONAL
-    if(unidad == "m/s"){
-        valor = valor*3.6;
+function convertirUnidadesVel1 (){
+    var unidad=getElementById("velocidad1");
+    var valor;
+    if(unidad == "m/s") {
+        valor = valor * 3.6;
+    }
+    return valor;
+}
 
-    }else if(unidad == "m"){
-        valor = valor/1000;
-    }else if(unidad == "cm") {
-        valor = valor/100000;
+function convertirUnidadesVel2 () {
+    var unidad = getElementById("velocidad2");
+    var valor;
+    if (unidad == "m/s") {
+        valor = valor * 3.6;
     }
     return valor;
 }
