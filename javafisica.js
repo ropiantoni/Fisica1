@@ -90,3 +90,30 @@ function dibujar() {
 
 
 }
+
+
+
+
+function convertirUnidades (valor, unidad){ //CONVIERTE LAS UNIDADES DE VALORES AL CONVENCIONAL
+    if(unidad == "miligramo" || unidad == "milimetro"){
+        valor = valor/1000;
+
+    }else if(unidad == "centimetro"){
+        valor = valor/100;
+    }else if(unidad == "kilogramo" || unidad =="kilometro") {
+        valor = valor * 1000;
+    }
+    return valor;
+}
+
+function convertirUnidades (valor, unidad){ //CONVIERTE LAS UNIDADES DE VALORES AL CONVENCIONAL
+    if(unidad == "m/s"){
+        valor = valor*3.6;
+
+    }else if(unidad == "m"){
+        valor = valor/1000;
+    }else if(unidad == "cm") {
+        valor = valor/100000;
+    }
+    return valor;
+}
