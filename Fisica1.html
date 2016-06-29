@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
     <link rel="stylesheet" type="text/css" href="cssfisica.css">
     <meta charset="UTF-8">
     <title>Fisica 1-Problemas de Encuentro</title>
     <link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="javafisica.js"></script>
+
 </head>
 
 
-<body onload="dibujar()">
+<body>
 <form id="valores">
     <div id="tit">
         FISICA I
@@ -31,15 +31,15 @@
                 DATOS<BR>
                 Velocidad:
                 <INPUT type="number" NAME="boton1" id="vel-uno" onchange="comprobarNum(this.value, this.name)">
-                <select name="velocidad1" id="velocidad1">
+                <select name="velocidad1" id="Uvelocidad1">
                     <option value="km/h">km/h</option>
                     <option value="m/s">m/s</option>
                 </select>
                 <BR>
                 Posici&oacute;n:
                 <INPUT type="number" NAME="vel1" id="pos-uno" onchange="comprobarNum(this.value, this.name)">
-                <select name="posicion" id="posicion">
-                    <option value="km/h">km</option>
+                <select name="posicion" id="Uposicion1">
+                    <option value="km">km</option>
                     <option value="m">m</option>
                     <option value="cm">cm</option>
                 </select>
@@ -52,14 +52,14 @@
                 DATOS<BR>
                 Velocidad:
                 <INPUT type="number" NAME="boton1" id="vel-dos" onchange="comprobarNum(this.value, this.name)">
-               <select name="velocidad2" id="velocidad2">
+              <select name="velocidad2" id="Uvelocidad2">
                 <option value="km/h">km/h</option>
                    <option value="m/s">m/s</option>
                </select>
                    <BR>
                 Posici&oacute;n:
                 <INPUT type="number" NAME="vel1" id="pos-dos" onchange="comprobarNum(this.value, this.name)">
-                <select name="posicion" id="posicion">
+                <select name="posicion" id="Uposicion2">
                     <option value="km">km</option>
                     <option value="m">m</option>
                     <option value="cm">cm</option>
@@ -76,7 +76,7 @@
                     <option value="DISTANCIA">Distancia que se producira el encuentro</option>
                     <option value="TIEMPO">Tiempo que se producira el encuentro</option>
                 </select>
-                <a onclick="calculo();"><button type="button" class="calcular">CALCULAR! </button></a>
+                <a onclick="calculo(); dibujar();"><button type="button" class="calcular">CALCULAR! </button></a>
             </fieldset>
 
             <fieldset id="rosa5" class="rosa">

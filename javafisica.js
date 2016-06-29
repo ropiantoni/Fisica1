@@ -16,108 +16,125 @@
  * @param valorIngreso, valor ingresado que puede ser altura, masa, distancia o Indice de Rozamiento
  * @param nombreParametro, que puede ser altura, masa, distanciaFreno o CoeficienteRozamiento
  */
+
+
+
+    var velocidad1;
+    var velocidad2;
+    var posicion1;
+    var posicion2;
+    var distancia;
+
+
 function comprobarNum(valorIngreso, nombreParametro) {
     if (isNaN(valorIngreso)) {
         alert("Valor ingresado no numerico, ingresar de nuevo.");
         document.getElementById(nombreParametro).value = "";
     }
+
 }
 
+function convertirUnidades (valor, unidad){ //CONVIERTE LAS UNIDADES DE VALORES AL CONVENCIONAL
+    if(unidad == "m"){
+        valor = valor/1000;
 
+    }else if(unidad == "cm"){
+        valor = valor/100000;
+    }else if(unidad == "m/s" ) {
+        valor = valor * 3.6;
+    }
+    return valor;
+}
 /**
  * Calcula la distancia a la que se produce el encuentro o el tiempo que demora, según la opción que ingresa el usuario
  */
 function calculo (){
-    var velocidad1 = document.getElementById("vel-uno").value;
-    var velocidad2 = document.getElementById("vel-dos").value;
-    var posicion1 = document.getElementById("pos-uno").value;
-    var posicion2 = document.getElementById("pos-dos").value;
+    var unidadPos1 = document.getElementById("Uposicion1").value;
+    var unidadVel1 = document.getElementById("Uvelocidad1").value;
+    var unidadPos2 = document.getElementById("Uposicion2").value;
+    var unidadVel2 = document.getElementById("Uvelocidad2").value;
+    velocidad1 = document.getElementById("vel-uno").value;
+    velocidad2 = document.getElementById("vel-dos").value;
+    posicion1 = document.getElementById("pos-uno").value;
+    posicion2 = document.getElementById("pos-dos").value;
+
+    if(unidadPos1 != "km"){
+        posicion1= convertirUnidades(posicion1, unidadPos1);
+    }
+    if (unidadPos2 != "km"){
+       posicion2 = convertirUnidades(posicion2, unidadPos2);
+    }
+    if(unidadVel1 != "km/h"){
+        velocidad1 = convertirUnidades(velocidad1, unidadVel1);
+    }
+    if(unidadVel2 != "km/h"){
+        velocidad2 =convertirUnidades(velocidad2, unidadVel2);
+    }
+
+
     var op = document.getElementById("opcion").value;
     var tiempo;
-    var distancia;
-    tiempo = (document.getElementById("pos-uno").value - document.getElementById("pos-dos").value) / (document.getElementById("vel-dos").value - document.getElementById("vel-uno").value);
+
+    tiempo = (posicion1 - posicion2) / (velocidad2 - velocidad1);
     tiempo = tiempo * 3600;
+    distancia = posicion1 + velocidad1 * Number(tiempo);
     if(op == "DISTANCIA") {
-        distancia = document.getElementById("pos-uno").value + document.getElementById("vel-uno").value * Number(tiempo);
         document.getElementById("resultado").value = distancia + "m";
     }
 
     if(op == "TIEMPO")
     {
-
         document.getElementById("resultado").value = tiempo + "s";
-
     }
+
 }
+
 
 function dibujar() {
 
     var myCanvas = document.getElementById("fondovideo");
-    var ctx = myCanvas.getContext("2d");
+    var calle = myCanvas.getContext("2d");
+    var a1 = myCanvas.getContext("2d");
+    var a2 = myCanvas.getContext("2d");
     var centerY = myCanvas.height / 2;
     var auto1 = new Image(100,20);
     var auto2 = new Image(200,25);
     auto1.src = "Imagenes/auto.jpg";
     auto2.src = "Imagenes/auto2.jpg";
-    var vector1 = 60;
-
-    auto1.onload = function () {
-        ctx.beginPath();
-        ctx.drawImage(auto1,0,centerY-(auto1.height/2));
-        ctx.moveTo(auto1.width,centerY);
-        ctx.lineTo(auto1.width+vector1+100,centerY);
-
-        ctx.moveTo(0,centerY+30);
-        ctx.lineTo(700,centerY+30);
-
-        //Parte flecha arriba
-        ctx.moveTo(auto1.width+vector1+100,centerY);
-        ctx.lineTo(auto1.width+vector1+90,centerY-10);
-
-        //Parte flecha abajo
-        ctx.moveTo(auto1.width+vector1+100,centerY);
-        ctx.lineTo(auto1.width+vector1+90,centerY+10);
 
 
-        ctx.stroke();}
-    auto2.onload = function () {
-        ctx.beginPath();
-        ctx.drawImage(auto2,300,centerY-(auto2.height/2));
-
-        ctx.stroke();}
+    var x1 = 0;
+    var x2 = posicion2*0.8 - posicion1*0.8;
 
 
+    function animar(){
+
+        myCanvas.width = myCanvas.width;
+        // auto 1
+        a1.beginPath();
+        a1.drawImage(auto1,x1,centerY-(auto1.height/2));
+        a1.stroke();
+        //auto 2
+        a2.beginPath();
+        a2.drawImage(auto2,x2,centerY-(auto2.height/2));
+        a2.stroke();
 
 
-}
+        // calle
+        calle.moveTo(0,centerY+30);
+        calle.lineTo(700,centerY+30);
+        calle.stroke();
 
+        x1 += velocidad1*0.05;
+        x2 +=velocidad2*0.05;
 
-function convertirUnidadesPosicion (){
-    var unidad=getElementById("posicion");
-    var valor;
-    if(unidad == "m"){
-        valor = valor/100000;
+        if( x1 >= x2-100){
+            clearInterval(id);
+        }
 
-    }else if(unidad == "cm"){
-        valor = valor/100000;
     }
-    return valor;
+
+    var id = setInterval(animar, 10);
 }
 
-function convertirUnidadesVel1 (){
-    var unidad=getElementById("velocidad1");
-    var valor;
-    if(unidad == "m/s") {
-        valor = valor * 3.6;
-    }
-    return valor;
-}
 
-function convertirUnidadesVel2 () {
-    var unidad = getElementById("velocidad2");
-    var valor;
-    if (unidad == "m/s") {
-        valor = valor * 3.6;
-    }
-    return valor;
-}
