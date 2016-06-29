@@ -129,3 +129,20 @@ body{
     margin-left: 20px;
     margin-top: 15px;
 }
+#barrainf
+{
+    margin-top: 40px;
+    position: absolute;
+    width: 40%;
+    height: 40px;
+    font-size:30px;
+    background-color: #31b5ff;
+}
+#logo
+{
+    position: absolute;
+    margin-left: 650px;
+    margin-top: -60px;
+    width: 25%;
+    height: 100px;
+}
